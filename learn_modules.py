@@ -46,7 +46,23 @@ import time as t
 
 
 
+#pillow
+from PIL import Image
 
+# img = Image.open(r"C:\Users\prave\OneDrive\Pictures\MSD.jpg")
+# img=img.resize((400,700))
+# img.show()
+
+
+import pygame as pg
+import time
+pg.init()
+ps = pg.display.set_mode((600,500))#to initiate frame
+ps1 = pg.image.load(r"C:\Users\prave\OneDrive\Pictures\demo1.jpg")#initate the image
+ps.blit(ps1,(50,50))#to combaine the frame and image
+pg.display.update()
+time.sleep(5)#to hold the process
+pg.quit()
 
 
 
