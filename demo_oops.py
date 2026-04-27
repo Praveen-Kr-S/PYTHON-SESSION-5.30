@@ -65,3 +65,70 @@ class car:
 
 c1 = car("Tata","Nexon","Blue",1500000)
 c2 = car("Hyndai","Creta","Black",1700000)
+
+
+
+
+#Single Level Inhertance
+class ebook:
+    def book(self):
+        print("Ebook Name : Learn Python")
+
+class author(ebook):
+    def author_name(self):
+        print("Author Name : Jai Prakash..")
+
+# a = author()
+# a.book()
+# a.author_name()
+
+#Multi-level inhertance
+
+class power:
+    def fun1(self):
+        print("Need Electronical device")
+
+
+class phone(power):
+    def fun2(self):
+        print("Connect with people")
+
+
+class smartphone(phone):
+    def fun3(self):
+        print("Smartphone with internet")
+
+# s = smartphone()
+# s.fun1()
+# s.fun2()
+# s.fun3()
+
+
+# Hierachical Inheritance
+
+class upi:
+    def upi_api_servie(self):
+        print("UPI API servie")
+
+class gpay(upi):
+    def gpay_money(self):
+        print("Gpay Money transfer")
+
+
+class phonepy(upi):
+    def phonepy_money(self):
+        print("phonepy Money transfer")
+
+
+gpay().gpay_money()
+gpay().upi_api_servie()
+phonepy().phonepy_money()
+phonepy().upi_api_servie()
+
+
+
+
+
+
+
+
