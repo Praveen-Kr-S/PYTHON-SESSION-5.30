@@ -129,6 +129,134 @@ phonepy().upi_api_servie()
 
 
 
+#polymorphism --> Many Faces
+"""
+1.method overloading
+single class
+multiple function with same function_name with diffrent arguments
+"""
+# java method or real method
+# class cal:
+#     def add(self,a,b):
+#         print("Add 2 arguments : ",a+b)
+#
+#     def add(self,a,b,c):
+#         print("Add 3 arguments : ",a+b+c)
+#
+#     def add(self,a,b,c,d):
+#         print("Add 4 arguments : ",a+b+c+d)
+#
+#     def add(self,a,b,c,d,e):
+#         print("Add 5 arguments : ",a+b+c+d+e)
+#
+# c = cal()
+# c.add(1,2,3,4,5)
+# c.add(1,2,3,4)
 
+class cal:
+    def add(self,a=None,b=None,c=None,d=None):
+        if a!=None and b!=None and c!=None and d!=None:
+            print("Add 4 arguments : ",a+b+c+d)
+        elif a!=None and b!=None and c!=None:
+            print("Add 3 arguments : ",a+b+c)
+        elif a!=None and b!=None:
+            print("Add 2 arguments : ",a+b)
+        else:
+            print("1 argument value : ",a)
+
+c = cal()
+# c.add(1,2,3,4)
+# c.add(1,2,3)
+# c.add(1,2)
+# c.add(1)
+
+
+
+# method overraiding
+#super()  --> class
+class school:
+    def mark(self):
+        print("10th = 388")
+
+class high_school(school):
+    def mark(self):
+        super().mark()
+        print("12th = 471")
+
+class college(high_school):
+    def mark(self):
+        super().mark()
+        print("CGPA = 7.5")
+
+# cg = college()
+# cg.mark()
+
+# Operator overloading
+
+# a = 10
+# b = "k"
+# print(a.__add__(b))
+# print(a.__sub__(b))
+# print(a.__sub__(5))
+# print(a.__mul__("hi"))
+
+
+
+# abstraction in oops
+# we need abc module -> ABC,abstractmethod
+from abc import ABC,abstractmethod
+class ebook(ABC): #abstract class
+    @abstractmethod
+    def book(self):
+        print("Book Name : Learn Python")
+        print("Author Name : Kasi prakash ")
+        print("Sensitive Content...")
+
+    @abstractmethod
+    def book1(self):
+        print("Book Name : Learn Java")
+        print("Author Name : Kasi Surjith ")
+        print("Sensitive Content...")
+
+    def book2(self):
+        print("Book Name : Learn Django")
+        print("Author Name : Praveen ")
+
+class vendor(ebook):
+    def book(self):
+        super().book()
+
+    def book1(self):
+        print("Book Name : Learn Java")
+        print("Author Name : jai surjith ")
+
+v = vendor()
+# v.book()
+# v.book1()
+# v.book2()
+
+# encapsulation in python
+
+class ac:
+    name = "Jai Prakash"
+    _acNo = 87654321 #protected
+    __pin = None #private
+
+    def show_pin(self,p):
+        self.__pin=p
+        # print(self.__pin)
+
+class gpay(ac):
+    def fun1(self):
+        print(self.name)
+        print(self._acNo)
+        # print(self.__pin)
+
+# a = ac()
+# print(a.name)
+# print(a.__pin)
+g = gpay()
+g.fun1()
+g.show_pin(8765)
 
 
